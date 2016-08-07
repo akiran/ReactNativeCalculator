@@ -9,13 +9,7 @@ export default class ButtonRow extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.props.controls.map(function (control) {
-          return (
-            <Button>
-              {control}
-            </Button>
-          )
-        })}
+        {this.props.children}
       </View>
     );
   }

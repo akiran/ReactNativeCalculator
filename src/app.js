@@ -6,14 +6,14 @@ import {
   Text
 } from 'react-native'
 import InputArea from './components/InputArea'
-import NumberPad from './components/NumberPad'
+import BasicKeyPad from './components/BasicKeyPad'
 
 export default class ReactNativeCalculator extends Component {
   render() {
     return (
       <View style={styles.container}>
         <InputArea />
-        <NumberPad />
+        <BasicKeyPad />
       </View>
     );
   }
