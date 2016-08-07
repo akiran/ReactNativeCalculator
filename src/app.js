@@ -1,18 +1,31 @@
 import React, { Component } from 'react'
 import {
   AppRegistry,
-  View
+  StyleSheet,
+  View,
+  Text
 } from 'react-native'
-import BlinkCursor from './components/BlinkCursor'
+import InputArea from './components/InputArea'
+import NumberPad from './components/NumberPad'
 
 export default class ReactNativeCalculator extends Component {
   render() {
     return (
-      <View>
-        <BlinkCursor />
+      <View style={styles.container}>
+        <InputArea />
+        <NumberPad />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  }
+})
+
+// TBR: disabling warning for now
+console.disableYellowBox = true
 
 AppRegistry.registerComponent('ReactNativeCalculator', () => ReactNativeCalculator)
