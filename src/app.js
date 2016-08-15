@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 import InputArea from './components/InputArea'
 import BasicKeyPad from './components/BasicKeyPad'
+import isNumber from 'lodash.isnumber'
 
 export default class ReactNativeCalculator extends Component {
   constructor(props) {
@@ -21,8 +22,15 @@ export default class ReactNativeCalculator extends Component {
     this.calculate = this.calculate.bind(this)
   }
   enter(input) {
+    let {inputs} = this.state
+    const lastInput = inputs[inputs.length - 1]
+    if (isNumber(input) && isNumber(lastInput)) {
+      inputs[inputs.length - 1] = lastInput * Math.pow(10, 1) + input
+    } else {
+      inputs = inputs.concat(input)
+    }
     this.setState({
-      inputs: this.state.inputs.concat(input)
+      inputs
     })
   }
   remove() {

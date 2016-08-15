@@ -10,7 +10,7 @@ const config = {
   lightBlue: '#addee8',
   blue: '#5aacc4',
   keyPadBorderColor: '#898888',
-  keyPadFontSize: 32,
+  keyPadFontSize: 40,
 }
 
 export default config

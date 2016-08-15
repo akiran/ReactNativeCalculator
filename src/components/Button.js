@@ -36,7 +36,7 @@ export default class Button extends Component {
 
 Button.defaultProps = {
   backgroundColor: 'white',
-  color: config.grey,
+  color: '#666',
   fontSize: config.keyPadFontSize,
   fontWeight: 'normal'
 }

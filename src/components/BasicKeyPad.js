@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 export default class NumberPad extends Component {
   render() {
-    const {enter, remove, clear} = this.props
+    const {enter, remove, clear, calculate} = this.props
     return (
       <View style={styles.container}>
         <ButtonRow>
@@ -29,20 +29,23 @@ export default class NumberPad extends Component {
           </Button>
           <Button
             backgroundColor={config.lightGrey}
-            color={config.blue}>
+            color={config.blue}
+            onPress={() => enter('%')}>
             %
           </Button>
           <Button
             backgroundColor={config.lightGrey}
             color={config.blue}
-            fontSize={config.keyPadFontSize*1.2}>&#x00f7;</Button>
+            fontSize={config.keyPadFontSize*1.2}
+            onPress={() => enter('/')}>&#x00f7;</Button>
         </ButtonRow>
         <ButtonRow>
           <Button onPress={() => enter(7)}>7</Button>
           <Button onPress={() => enter(8)}>8</Button>
           <Button onPress={() => enter(9)}>9</Button>
           <Button
-            backgroundColor={config.lightGrey}>
+            backgroundColor={config.lightGrey}
+            onPress={() => enter('*')}>
             <Icon 
               name='clear' 
               color={config.blue} 
@@ -50,11 +53,12 @@ export default class NumberPad extends Component {
           </Button>
         </ButtonRow>
         <ButtonRow>
-          <Button>4</Button>
-          <Button>5</Button>
-          <Button>6</Button>
+          <Button onPress={() => enter(4)}>4</Button>
+          <Button onPress={() => enter(5)}>5</Button>
+          <Button onPress={() => enter(6)}>6</Button>
           <Button
-            backgroundColor={config.lightGrey}>
+            backgroundColor={config.lightGrey}
+            onPress={() => enter('+')}>
             <Icon 
               name='add' 
               color={config.blue} 
@@ -62,11 +66,12 @@ export default class NumberPad extends Component {
           </Button>
         </ButtonRow>
         <ButtonRow>
-          <Button>1</Button>
-          <Button>2</Button>
-          <Button>3</Button>
+          <Button onPress={() => enter(1)}>1</Button>
+          <Button onPress={() => enter(2)}>2</Button>
+          <Button onPress={() => enter(3)}>3</Button>
           <Button
-            backgroundColor={config.lightGrey}>
+            backgroundColor={config.lightGrey}
+            onPress={() => enter('-')}>
             <Icon 
               name='remove' 
               color={config.blue} 
@@ -75,11 +80,15 @@ export default class NumberPad extends Component {
         </ButtonRow>
         <ButtonRow>
           <Button>&#9679;</Button>
-          <Button>0</Button>
+          <Button  onPress={() => enter(0)}>0</Button>
           <Button>
             +/-
           </Button>
-          <Button backgroundColor={config.green} color='white' fontSize={config.keyPadFontSize*1.2}>
+          <Button 
+            backgroundColor={config.green} 
+            color='white' 
+            fontSize={config.keyPadFontSize*1.2}
+            onPress={calculate}>
             =
           </Button>
         </ButtonRow>
