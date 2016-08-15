@@ -3,7 +3,7 @@ import {
 } from 'react-native'
 
 const config = {
-  borderWidth: 0.5,
+  borderWidth: 1,
   lightGrey: '#ecefed',
   grey: '#898888',
   green: '#49ac50',

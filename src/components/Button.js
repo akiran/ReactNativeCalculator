@@ -23,11 +23,9 @@ export default class Button extends Component {
     }
     return (
       <View style={[styles.container, style]}>
-        <View >
-          <Text style={textStyle}>
-            {this.props.children}
-          </Text>
-        </View>
+        <Text style={textStyle}>
+          {this.props.children}
+        </Text>
       </View>
     );
   }
@@ -45,9 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // borderColor: config.keyPadBorderColor,
-    // borderWidth: 0.5,
-    // borderBottomWidth: config.borderWidth,
-    // borderRightWidth: config.borderWidth,
+    borderRightWidth: config.borderWidth,
+    borderColor: config.keyPadBorderColor,
   },
 })
