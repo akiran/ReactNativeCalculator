@@ -11,13 +11,15 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 export default class NumberPad extends Component {
   render() {
+    const {enter, remove, clear} = this.props
     return (
       <View style={styles.container}>
         <ButtonRow>
           <Button 
             backgroundColor={config.lightGrey}
             color={config.blue}
-            fontWeight='bold'>
+            fontWeight='bold'
+            onPress={clear}>
             C
           </Button>
           <Button 
@@ -36,9 +38,9 @@ export default class NumberPad extends Component {
             fontSize={config.keyPadFontSize*1.2}>&#x00f7;</Button>
         </ButtonRow>
         <ButtonRow>
-          <Button>7</Button>
-          <Button>8</Button>
-          <Button>9</Button>
+          <Button onPress={() => enter(7)}>7</Button>
+          <Button onPress={() => enter(8)}>8</Button>
+          <Button onPress={() => enter(9)}>9</Button>
           <Button
             backgroundColor={config.lightGrey}>
             <Icon 

@@ -11,7 +11,6 @@ const config = {
   blue: '#5aacc4',
   keyPadBorderColor: '#898888',
   keyPadFontSize: 32,
-
 }
 
 export default config

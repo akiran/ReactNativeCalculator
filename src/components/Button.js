@@ -3,13 +3,14 @@ import {
   View,
   Text,
   StyleSheet,
+  TouchableHighlight
 } from 'react-native'
 
 import config from '../config'
 
 export default class Button extends Component {
   render() {
-    const {backgroundColor, color, fontSize, fontWeight} = this.props
+    const {backgroundColor, color, fontSize, fontWeight, onPress} = this.props
     const style = {
       backgroundColor,
     }
@@ -23,9 +24,11 @@ export default class Button extends Component {
     }
     return (
       <View style={[styles.container, style]}>
-        <Text style={textStyle}>
-          {this.props.children}
-        </Text>
+        <TouchableHighlight onPress={onPress}>
+          <Text style={textStyle}>
+            {this.props.children}
+          </Text>
+        </TouchableHighlight>
       </View>
     );
   }
