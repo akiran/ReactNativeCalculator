@@ -25,6 +25,8 @@ export default class InputArea extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2
+    flex: 2,
+    elevation: 5,
+    backgroundColor: 'white'
   }
 })
